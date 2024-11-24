@@ -1,0 +1,488 @@
+operators
+
+//#include<iostream>
+//using namespace std;
+//void arith(int a,int b);
+//void rel(int a,int b);
+//void log (int a,int b);
+//void bitw (int a,int b);
+//void uny (int a,int b);
+//void cond (int a,int b);
+//int main()
+//{
+//    int a,b,bit,num;
+//    cout<<"Enter the two numbers\n";
+//    cin>>a>>b;
+//    arith(a,b);
+//    rel(a,b);
+//    log(a,b);
+//    bitw(a,b);
+//    uny(a,b);
+//    cond(a,b);
+//    return 0;
+//}
+//inline void arith (int a,int b)
+//{
+//    cout<<"\n********** Arithmetic Operator **********\n";
+//    cout<<"\nThe addition of two numbers :"<<a+b<<endl;
+//    cout<<"The subtraction of two numbers :"<<a-b<<endl;
+//    cout<<"The multiplication of two numbers :"<<a*b<<endl;
+//    cout<<"The divison of two numbers :"<<a/b<<endl;
+//}
+//
+//inline void rel (int a,int b)
+//{
+//    bool result;
+//    cout<<"\n********** Relational Operator **********\n";
+//    result=(a==b);
+//    cout<<"\nOutput is : "<<result<<endl;
+//    result=(a!=b);
+//    cout<<"Output is : "<<result<<endl;
+//    result=(a>b);
+//    cout<<"Output is : "<<result<<endl;
+//    result=(a<b);
+//    cout<<"Output is : "<<result<<endl;
+//    result=(a>=b);
+//    cout<<"Output is : "<<result<<endl;
+//    result=(a<=b);
+//    cout<<"Output is : "<<result<<endl;
+//}
+//inline void log (int a,int b)
+//{
+//    bool result;
+//    cout<<"\n********** Logical Operator **********\n";
+//    result=(a!=b) && (a<b);
+//    cout<<"Output is : "<<result<<endl;
+//    result=(a!=b) || (a<b);
+//    cout<<"Output is : "<<result<<endl;
+//    result=!(a==b);
+//    cout<<"Output is : "<<result<<endl;
+//}
+//
+//inline void bitw (int a,int b)
+//{
+//    bool bitw;
+//    cout<<"\n********** Bitwise Operator **********\n";
+//    bitw=(a&b);
+//    cout<<"Output is : "<<bitw<<endl;
+//    bitw=(a|b);
+//    cout<<"Output is : "<<bitw<<endl;
+//    bitw=(a^b);
+//    cout<<"Output is : "<<bitw<<endl;
+//}
+//
+//inline void uny (int a,int b)
+//{
+//    cout<<"\n*******Unary Operator*******\n";
+//    a=++a;
+//    cout << "output is " << a << endl;
+//    a=a++;
+//    cout << "output is " << a << endl;
+//    a=--a;
+//    cout << "output is " << a << endl;
+//    a=a--;
+//    cout << "output is " << a << endl;
+//}
+//
+//inline void cond (int a,int b)
+//{
+//    int num;
+//    cout<<"\n*******Conditional Operator*******\n";
+//    num=a>b?a:b;
+//    cout<<"The greater number is:"<<num;
+//}
+
+
+
+Array
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//    int a[10],n,j,temp;
+//    cout<<"Enter the number of elements :\n";
+//    cin>>n;
+//    cout<<"Enter the array elements \n";
+//    for(int i=0;i<n;i++)
+//    {
+//        cin>>a[i];
+//    }
+//    cout<<"The array elements are :\n";
+//    for (int i=0;i<n;i++)
+//    {
+//        cout<<a[i]<<endl;
+//    }
+//    cout<<"\nSorting the Array in ascending order\n";
+//    for(int i=0;i<(n-1);i++)
+//    {
+//        for(int j=0;j<(n-i-1);j++)
+//        {
+//            if(a[j]>a[j+1])
+//            {
+//                temp=a[j];
+//                a[j]=a[j+1];
+//                a[j+1]=temp;
+//            }
+//        }
+//    }
+//    cout<<"Array sorted successfully\n";
+//     cout<<"The array elements after sorting are :\n";
+//    for (int i=0;i<n;i++)
+//    {
+//        cout<<a[i]<<endl;
+//    }
+//    return 0;
+//}
+
+
+
+binary overloading
+
+//#include<iostream>
+//using namespace std;
+//class A
+//{
+//    int x;
+//public:
+//    A(int i)
+//    {
+//        x=i;
+//  }
+//  void operator+(A);
+//  void display();
+//};
+//void A :: operator+(A a)
+//{
+//    int m= x+a.x;
+//    cout<<"result of addition is: "<<m;
+//}
+//int main()
+//{
+//    A a1(5);
+//    A a2(4);
+//    a1+a2;
+//    return 0;
+//}
+
+
+unary
+//#include <iostream>
+//using namespace std;
+//class Distance{
+//private:
+//    int feet;
+//    int inches;
+//public:
+//    Distance(){
+//    feet=0;
+//    inches=0;
+//    }
+//    Distance(int f, int i){
+//    feet=f;
+//    inches=i;
+//    }
+//    void displayDistance(){
+//    cout<<"F: "<<feet<<" "<<"I: "<<inches<<endl;
+//    }
+//   Distance operator- () {
+//    feet= -feet;
+//    inches= -inches;
+//    return Distance(feet, inches);
+//    }
+//};
+//int main(){
+//Distance D1(11,10), D2(-5,11);
+//-D1;
+//D1.displayDistance();
+//
+//-D2;
+//D2.displayDistance();
+//return 0;
+//}
+
+
+
+class and object
+
+#include<iostream>
+using namespace std;
+class student
+{
+    int roll_no;
+    string name;
+    int marks;
+public:
+    void get_data(int a,string b, int c)
+    {
+        roll_no=a;
+        name=b;
+        marks=c;
+    }
+    void display()
+    {
+       cout<<"student Details are:\n";
+       cout<<roll_no<<" "<<name<<" "<<marks<<endl;
+    }
+};
+int main()
+{
+    student s,s1;
+    s.get_data(1,"pavan",90);
+    s.display();
+    s1.get_data(2,"jayesh",93);
+    s1.display();
+    return 0;
+}
+
+
+friend function
+#include<iostream>
+using namespace std;
+class student
+{
+    int roll_no;
+    string name;
+    int marks;
+public:
+    void get_data(int a,string b, int c)
+    {
+        roll_no=a;
+        name=b;
+        marks=c;
+    }
+    void display()
+    {
+       cout<<"student Details are:\n";
+       cout<<roll_no<<" "<<name<<" "<<marks<<endl;
+    }
+};
+int main()
+{
+    student s,s1;
+    s.get_data(1,"pavan",90);
+    s.display();
+    s1.get_data(2,"jayesh",93);
+    s1.display();
+    return 0;
+}
+
+
+memory management
+
+#include<iostream>
+using namespace std;
+class student
+{
+    int roll_no;
+    string name;
+    int marks;
+public:
+    void get_data(int a,string b, int c)
+    {
+        roll_no=a;
+        name=b;
+        marks=c;
+    }
+    void display()
+    {
+       cout<<"student Details are:\n";
+       cout<<roll_no<<" "<<name<<" "<<marks<<endl;
+    }
+};
+int main()
+{
+    student s,s1;
+    s.get_data(1,"pavan",90);
+    s.display();
+    s1.get_data(2,"jayesh",93);
+    s1.display();
+    return 0;
+}
+
+
+exception handeling
+
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//    try
+//    {
+//        int x,y,a;
+//        cout<<"enter the value of x and y\n";
+//        cin>>x>>y;
+//        if(x>y)
+//            cout<<"x is greater";
+//        else if (x<y)
+//            cout<<"y is greater";
+//        else
+//            throw a;
+//    }
+//    catch(int a)
+//    {
+//        cout<<"both numbers are equal";
+//    }
+//    return 0;
+//}
+//
+//
+//
+//
+//#include<iostream>
+//using namespace std;
+//int main()
+//{
+//    try
+//    {
+//        int x,a;
+//        cout<<"enter the number\n";
+//        cin>>x;
+//        if(x%2==0)
+//            cout<<"number is even";
+//        else
+//            throw a;
+//    }
+//    catch(int a)
+//    {
+//        cout<<"odd";
+//    }
+//    return 0;
+//}
+
+
+
+//#include <iostream>
+//#include <stdexcept>
+//using namespace std;
+//float Division(float num, float den)
+//{
+//    if (den == 0) {
+//        throw runtime_error("Math error: Attempted to divide by Zero\n");
+//    }
+//    return (num / den);
+//}
+//int main()
+//{
+//    float numerator, denominator, result;
+//    numerator = 12.5;
+//    denominator = 2;
+//    try {
+//        result = Division(numerator, denominator);
+//        cout << "The quotient is "
+//             << result << endl;
+//    }
+//    catch (runtime_error& e) {
+//        cout << "Exception occurred" << endl
+//             << e.what();
+//    }
+//}
+
+
+
+file handling
+
+//#include<iostream>
+//#include<fstream>
+//#include<string>
+//using namespace std;
+//int main()
+//{
+//    ofstream fout;
+//    fout.open("New.txt");
+//    if(!fout) {
+//        cerr<< "Erroe in opening file!"<<endl;
+//        return 1;
+//    }
+//    string line;
+//    int i=0;
+//    cout<<"enter 5 lines of text"<<endl;
+//        while(i<5){
+//            getline(cin, line);
+//            fout<<line<<endl;
+//            i += 1;
+//        }
+//        fout.close();
+//        cout<<"text successfully written to Newfile"<<endl;
+//        string srg;
+//        ifstream filestream("xyz.txt");
+//        if (filestream.is_open())
+//        {
+//            while (getline (filestream,srg))
+//            {
+//                cout<<srg<<endl;
+//            }
+//            filestream.close();
+//        }
+//        else{
+//            cout<<"fail"<<endl;
+//        }
+//    return 0;
+//}
+
+
+template
+
+//#include<iostream>
+//using namespace std;
+//template <typename T> T myMax(T x, T y)
+//{
+//    return (x>y)? x: y;
+//}
+//int main()
+//{
+//    cout<<myMax<int>(3,7)<<endl;
+//     cout<<myMax<double>(3.0,9.0)<<endl;
+//      cout<<myMax<char>('p', 't')<<endl;
+//      return 0;
+//}
+//#include <iostream>
+//using namespace std;
+//
+//template <typename T> T swapping (T &x, T &y) {
+//    T temp;
+//    temp =x;
+//    x=y;
+//    y=temp;
+//}
+//
+//int main()
+//{
+//    int a,b;
+//  float p,q;
+//
+//    cout << "enter value of a and b " ;
+//    cin>>a>>b;
+//    swapping<int>(a,b);
+//
+//    cout << "value of a and b after swapping: "<<a<<", "<<b<<endl ;
+//     cout << "enter value of p and q " ;
+//    cin>>p>>q;
+//    swapping<float>(p,q);
+//
+//    cout << "value of a and b after swapping: "<<p<<", "<<q<<endl ;
+//    return 0;
+//}
+//#include<iostream>
+//using namespace std;
+//template <class T>
+//class A
+//{
+//    T a;
+//    T b;
+//public:
+//    A(T x, T y)
+//    {
+//        a=x;
+//        b=y;
+//    }
+//    void display()
+//    {
+//        cout<<"the value of a and b are:"<<a<<", "<<b<<endl;
+//    }
+//};
+//int main()
+//{
+//    A<int>d(5,8);
+//    d.display();
+//    return 0;
+//}
